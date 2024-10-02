@@ -1,0 +1,1297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "unica one", cursive;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 767px) {
+  header {
+    height: 13vh;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    position: fixed;
+    z-index: 3;
+    background-color: #eee;
+    width: 100%;
+  }
+  header .headerRight {
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header .headerRight span span {
+    color: #535BD4;
+  }
+  header .headerRight span .logo {
+    color: #1dc9e3;
+  }
+  header .headerLeft {
+    display: none;
+  }
+  header input {
+    display: none;
+  }
+  header input:checked ~ .dropdown {
+    display: grid;
+  }
+  header label {
+    font-size: 1.4rem;
+    padding-right: 0;
+    display: grid;
+    align-items: center;
+    justify-items: end;
+    padding-right: 2rem;
+    color: #656565;
+  }
+  header .dropdown {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: #eee;
+    display: none;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(6, 1fr);
+    min-height: 20rem;
+    border-top: 1px solid #e7e7e7;
+    text-align: center;
+    z-index: 2;
+  }
+  header li {
+    padding: 1rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+  header li a {
+    color: #656565;
+    text-decoration: none;
+  }
+  .main {
+    height: 110vh;
+    background: url(./images/home-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+  }
+  .main .mainMiddle {
+    height: 100%;
+    background-color: #535BD4;
+    opacity: 0.9;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  .main .mainMiddle .img {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .main .mainMiddle .img img {
+    height: 85%;
+    width: 85%;
+    margin: auto;
+  }
+  .main .mainMiddle .img .mainText {
+    height: 80%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    text-align: center;
+  }
+  .main .mainMiddle .img .mainText h1 {
+    font-size: 1.9rem;
+    font-weight: 400;
+  }
+  .main .mainMiddle .img .mainText p {
+    font-family: sans-serif;
+  }
+  .main .mainMiddle .img .mainText button {
+    width: 12rem;
+    height: 80%;
+    border-radius: 2rem;
+    font-weight: bolder;
+    font-size: larger;
+    color: #eee;
+    background-color: #1dc9e3;
+    outline: none;
+    border: none;
+    margin: auto;
+  }
+  .main .mainMiddle .img .mainText button:hover {
+    background-color: transparent;
+    border: 3px solid #eee;
+    border-right: 3px solid #000000;
+    border-left: 3px solid #000000;
+    transition: all 0.5s ease-in;
+  }
+  .about {
+    height: 150vh;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #000000;
+    color: #eee;
+  }
+  .about .aboutText {
+    height: 100%;
+    display: grid;
+    text-align: center;
+  }
+  .about .aboutText h1 {
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: auto;
+  }
+  .about .aboutText h2 {
+    font-weight: 400;
+    margin: auto;
+  }
+  .about .aboutText h3 {
+    font-weight: 400;
+    font-size: medium;
+    width: 70%;
+    display: inline-block;
+    margin: auto;
+    color: #535BD4;
+  }
+  .about .aboutText p {
+    font-weight: 0.2rem;
+    font-size: 0.9rem;
+    color: #656565;
+    font-family: sans-serif;
+    width: 95%;
+    display: inline-block;
+    margin: auto;
+  }
+  .about .aboutText p a {
+    color: #535BD4;
+  }
+  .about .team {
+    height: 80%;
+    background-image: url(./images/team-img1.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .about .team:hover > .teamDesc {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .about .team:hover > .teamDesc > .uiux {
+    color: #1dc9e3;
+  }
+  .about .team:hover > .teamDesc > .Teamicons {
+    display: flex;
+  }
+  .about .team .teamDesc {
+    height: 30%;
+    width: 100%;
+    background-color: #e7e7e7;
+    text-align: center;
+    font-weight: 400;
+    position: absolute;
+    top: 80%;
+  }
+  .about .team .teamDesc > h2 {
+    font-weight: lighter;
+    font-size: 1.3rem;
+    color: #535BD4;
+  }
+  .about .team .teamDesc .uiux {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #656565;
+  }
+  .about .team .teamDesc .Teamicons {
+    height: 5rem;
+    width: 10rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .about .team .teamDesc .Teamicons i {
+    color: #656565;
+    font-size: 1.1rem;
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about .team .teamDesc .Teamicons i:hover {
+    background-color: #1dc9e3;
+    transform: translateY(-10%);
+    transition: all 0.5s ease-in-out;
+    color: #eee;
+  }
+  .about #candy {
+    height: 80%;
+    width: 80%;
+    background-image: url(./images/team-img2.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+  }
+  .about #candy:hover > .teamDesc {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .about #candy:hover > .teamDesc > .uiux {
+    color: #1dc9e3;
+  }
+  .about #candy:hover > .teamDesc > .Teamicons {
+    display: flex;
+  }
+  .about #candy .teamDesc {
+    height: 30%;
+    width: 100%;
+    background-color: #e7e7e7;
+    text-align: center;
+    font-weight: 400;
+    position: absolute;
+    top: 80%;
+  }
+  .about #candy .teamDesc > h2 {
+    font-weight: lighter;
+    font-size: 1.3rem;
+    color: #535BD4;
+  }
+  .about #candy .teamDesc .uiux {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #656565;
+  }
+  .Labout {
+    display: none;
+  }
+  .learnmore {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #1dc9e3;
+    color: #eee;
+  }
+  .learnmore .learn {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .learnmore .learn h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .learnmore .learn button {
+    height: 4rem;
+    width: 10rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    color: #eee;
+    background-color: #000000;
+    border: none;
+    outline: none;
+  }
+  .learnmore .learn button:hover {
+    background-color: transparent;
+    border: 3px solid #eee;
+    border-right: 3px solid #000000;
+    border-left: 3px solid #000000;
+    transition: all 0.5s ease-in;
+  }
+  .screenshot {
+    height: 110vh;
+    display: grid;
+    grid-template-rows: 2fr 6fr;
+    background-color: #000000;
+  }
+  .screenshot .scText {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .screenshot .scText > div > h1 {
+    font-size: 1.9rem;
+    padding-bottom: 2rem;
+    color: #e7e7e7;
+  }
+  .screenshot .scText > div > p {
+    color: #656565;
+  }
+  .screenshot .container {
+    height: 90%;
+    width: 100%;
+  }
+  .screenshot .container input {
+    display: none;
+  }
+  .screenshot .container #img1:checked ~ .wrapper .image-holder {
+    transform: translateX(0);
+    transition: all 1s ease;
+  }
+  .screenshot .container #img2:checked ~ .wrapper .image-holder {
+    transform: translateX(-100%);
+    transition: all 1s ease;
+  }
+  .screenshot .container #img3:checked ~ .wrapper .image-holder {
+    transform: translateX(-200%);
+    transition: all 1s ease;
+  }
+  .screenshot .container #img4:checked ~ .wrapper .image-holder {
+    transform: translateX(-300%);
+    transition: all 1s ease;
+  }
+  .screenshot .container #img5:checked ~ .wrapper .image-holder {
+    transform: translateX(-400%);
+    transition: all 1s ease;
+  }
+  .screenshot .container #img6:checked ~ .wrapper .image-holder {
+    transform: translateX(-500%);
+    transition: all 1s ease;
+  }
+  .screenshot .container #img7:checked ~ .wrapper .image-holder {
+    transform: translateX(-600%);
+    transition: all 1s ease;
+  }
+  .screenshot .container #img8:checked + .wrapper .image-holder {
+    transform: translateX(-700%);
+    transition: all 1s ease;
+  }
+  .screenshot .container .wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  .screenshot .container .wrapper .image-holder {
+    display: grid;
+    grid-template-columns: repeat(8, 100%);
+    height: 100%;
+    width: 100%;
+  }
+  .screenshot .container .wrapper .image-holder #img1 {
+    background-image: url(./images/screenshot-img1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .screenshot .container .wrapper .image-holder #img2 {
+    background-image: url(./images/screenshot-img2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .screenshot .container .wrapper .image-holder #img3 {
+    background-image: url(./images/screenshot-img3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .screenshot .container .wrapper .image-holder #img4 {
+    background-image: url(./images/screenshot-img4.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .screenshot .container .wrapper .image-holder #img5 {
+    background-image: url(./images/screenshot-img5.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .screenshot .container .wrapper .image-holder #img6 {
+    background-image: url(./images/screenshot-img6.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .screenshot .container .wrapper .image-holder #img7 {
+    background-image: url(./images/screenshot-img7.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .screenshot .container .wrapper .image-holder #img8 {
+    background-image: url(./images/screenshot-img8.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .screenshot .container .target {
+    height: 10%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+  }
+  .screenshot .container .target label {
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 50%;
+    border: 1px solid white;
+  }
+  .Lscreenshot {
+    display: none;
+  }
+  .appPricing {
+    height: 220vh;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    background-color: #535BD4;
+  }
+  .appPricing .appText {
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #eee;
+  }
+  .appPricing .appText hr {
+    width: 6rem;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 1rem;
+  }
+  .appPricing .priceCard {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr) 0.2fr;
+  }
+  .appPricing .priceCard .cardHolder {
+    display: grid;
+    align-items: center;
+    position: relative;
+  }
+  .appPricing .priceCard .cardHolder .card {
+    display: grid;
+    grid-template-rows: 2fr repeat(5, 1fr) 2fr;
+    height: 85%;
+    width: 85%;
+    text-align: center;
+    margin: auto;
+  }
+  .appPricing .priceCard .cardHolder .card h2,
+  .appPricing .priceCard .cardHolder .card h3,
+  .appPricing .priceCard .cardHolder .card p {
+    margin: auto;
+  }
+  .appPricing .priceCard .cardHolder .card h2 {
+    font-size: 3rem;
+    color: #1dc9e3;
+  }
+  .appPricing .priceCard .cardHolder .card h3 {
+    color: #535BD4;
+  }
+  .appPricing .priceCard .cardHolder .card p {
+    color: #656565;
+  }
+  .appPricing .priceCard .cardHolder button {
+    position: absolute;
+    height: 4rem;
+    width: 10rem;
+    border-radius: 2rem;
+    background-color: #1dc9e3;
+    font-size: larger;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    color: #eee;
+    top: 80%;
+    left: 34%;
+  }
+  .appPricing .priceCard .cardHolder button:hover {
+    background-color: #eee;
+    color: #000000;
+    border: 3px solid #eee;
+    border-right: 3px solid #000000;
+    border-left: 3px solid #000000;
+    transition: all 0.5s ease-in;
+  }
+  .newsletter {
+    height: 75vh;
+    background-image: url(./images/newsletter-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+  }
+  .newsletter .subscribe {
+    background-color: #1dc9e3;
+    opacity: 0.9;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .newsletter .subscribe .subscribeText {
+    text-align: center;
+    margin: auto;
+    color: #eee;
+  }
+  .newsletter .subscribe .mail {
+    display: grid;
+    grid-template-rows: repeat(1fr);
+  }
+  .newsletter .subscribe .mail input {
+    height: 4rem;
+    width: 90%;
+    border: none;
+    border-bottom: 3px solid #eee;
+    background: transparent;
+    margin: auto;
+  }
+  .newsletter .subscribe .mail input::-moz-placeholder {
+    font-size: 1.2rem;
+    padding-left: 2rem;
+    color: #eee;
+  }
+  .newsletter .subscribe .mail input::placeholder {
+    font-size: 1.2rem;
+    padding-left: 2rem;
+    color: #eee;
+  }
+  .newsletter .subscribe .mail button {
+    height: 3rem;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1dc9e3;
+    background-color: #eee;
+    border: none;
+  }
+  .newsletter .subscribe .mail button:hover {
+    background: transparent;
+    color: #eee;
+    border: 3px solid #eee;
+    transition: all 0.5s ease-in;
+  }
+  footer {
+    height: 30vh;
+    background-color: #000000;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  footer p {
+    text-align: center;
+    margin: auto;
+    font-size: larger;
+    color: #656565;
+  }
+  footer p #temp {
+    color: #535BD4;
+    cursor: pointer;
+  }
+  footer p #temp:hover {
+    color: #1dc9e3;
+    transition: all 0.5s ease;
+  }
+  footer .icons {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    justify-content: center;
+  }
+  footer .icons .iconbg {
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  footer .icons .iconbg i {
+    color: #656565;
+    font-size: 1.1rem;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .icons .iconbg i:hover {
+    background-color: #1dc9e3;
+    transform: translateY(-10%);
+    transition: all 0.5s ease-in-out;
+    color: #eee;
+  }
+}
+@media (max-width: 400px) {
+  .appPricing .priceCard .cardHolder button {
+    left: 27%;
+  }
+}
+@media (min-width: 768px) {
+  header {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #eee;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+  }
+  header .headerRight {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 20%;
+  }
+  header .headerRight span {
+    font-size: 1.8rem;
+    color: #1dc9e3;
+    font-weight: 600;
+  }
+  header .headerRight .logo {
+    font-size: 1.8rem;
+    color: #535BD4;
+    font-weight: 600;
+  }
+  header .headerLeft {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 45%;
+  }
+  header .headerLeft li a {
+    color: #656565;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  header input {
+    display: none;
+  }
+  header label {
+    display: none;
+  }
+  header .dropdown {
+    display: none;
+  }
+  .main {
+    height: 80vh;
+    background: url(./images/home-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+    margin-top: 10vh;
+  }
+  .main .mainMiddle {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to left, #4776E6, #8E54E9);
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main .mainMiddle .img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .main .mainMiddle .img img {
+    height: 22rem;
+    width: 37rem;
+  }
+  .main .mainMiddle .img .mainText {
+    height: 17rem;
+    width: 37rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: #eee;
+  }
+  .main .mainMiddle .img .mainText h1 {
+    font-size: 3.25rem;
+    font-weight: 400;
+  }
+  .main .mainMiddle .img .mainText p {
+    font-size: 1.25rem;
+  }
+  .main .mainMiddle .img .mainText button {
+    height: 3.5rem;
+    width: 11rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-radius: 2rem;
+    background-color: #1dc9e3;
+    border: none;
+    color: #eee;
+  }
+  .main .mainMiddle .img .mainText button:hover {
+    background-color: transparent;
+    border: 3px solid #eee;
+    border-right: 3px solid #000000;
+    border-left: 3px solid #000000;
+    transition: all 0.5s ease-in;
+  }
+  .about {
+    display: none;
+  }
+  .Labout {
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1c1c1c;
+    gap: 2rem;
+  }
+  .Labout .greet {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: #eee;
+  }
+  .Labout .greet h1 {
+    font-size: 3.25rem;
+    font-weight: 400;
+  }
+  .Labout .greet hr {
+    width: 6rem;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 1rem;
+  }
+  .Labout .mobile {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .Labout .mobile .mobileTeamDesc {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .Labout .mobile .mobileTeamDesc h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #eee;
+  }
+  .Labout .mobile .mobileTeamDesc h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #8783E5;
+  }
+  .Labout .mobile .mobileTeamDesc p {
+    font-size: 1.25rem;
+    color: #E1E0E0;
+  }
+  .Labout .mobile .mobileTeamDesc p span {
+    color: #535BD4;
+  }
+  .Labout .mobile .mobileTeamDesc p span:hover {
+    color: #1dc9e3;
+    transition: all 0.5s ease-out;
+  }
+  .Labout .mobile .uiux {
+    height: 100%;
+    width: 18%;
+    background-image: url(./images/team-img1.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .Labout .mobile .uiux:hover > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .Labout .mobile .uiux:hover > div > h4 {
+    color: #1dc9e3;
+  }
+  .Labout .mobile .uiux:hover > div > .Teamicons {
+    display: flex;
+  }
+  .Labout .mobile .uiux > div {
+    height: 35%;
+    width: 100%;
+    background-color: #E1E0E0;
+    position: absolute;
+    top: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #535BD4;
+  }
+  .Labout .mobile .uiux > div > h3 {
+    color: #535BD4;
+    font-size: 1.4rem;
+  }
+  .Labout .mobile .uiux > div > h4 {
+    color: #333333;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  .Labout .mobile .uiux > div .Teamicons {
+    height: 5rem;
+    width: 10rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .Labout .mobile .uiux > div .Teamicons i {
+    color: #656565;
+    font-size: 1.1rem;
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Labout .mobile .uiux > div .Teamicons i:hover {
+    background-color: #1dc9e3;
+    transform: translateY(-10%);
+    transition: all 0.5s ease-in-out;
+    color: #eee;
+  }
+  .Labout .mobile #candy {
+    background-image: url(./images/team-img2.jpg);
+  }
+  .learnmore {
+    height: 60vh;
+    background-color: #1dc9e3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    color: #E1E0E0;
+  }
+  .learnmore .learn {
+    width: 46rem;
+    height: 11rem;
+    margin: auto;
+  }
+  .learnmore .learn h2 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 2rem;
+  }
+  .learnmore .learn button {
+    height: 3.5rem;
+    width: 11rem;
+    border-radius: 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #E1E0E0;
+    background-color: #181616;
+    border: none;
+    margin-left: 17rem;
+  }
+  .learnmore .learn button:hover {
+    background-color: transparent;
+    border: 3px solid #eee;
+    border-right: 3px solid #000000;
+    border-left: 3px solid #000000;
+    transition: all 0.5s ease-in;
+  }
+  .screenshot {
+    display: none;
+  }
+  .Lscreenshot {
+    height: 120vh;
+    background-color: #1c1c1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .Lscreenshot .scText {
+    height: 25%;
+    width: 65%;
+  }
+  .Lscreenshot .scText div {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  .Lscreenshot .scText div h1 {
+    font-size: 3.25rem;
+    color: #eee;
+  }
+  .Lscreenshot .scText div p {
+    font-size: 1.25rem;
+    color: #656565;
+  }
+  .Lscreenshot .scmain {
+    height: 70%;
+    width: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .Lscreenshot .scmain .scimgs {
+    height: 95%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 100%);
+    overflow: hidden;
+  }
+  .Lscreenshot .scmain .scimgs #s1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .Lscreenshot .scmain .scimgs #s1 .img {
+    height: 75%;
+    width: 24%;
+  }
+  .Lscreenshot .scmain .scimgs #s1 .img:hover {
+    transform: translateY(-10px);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+    transition: all 0.5s ease-out;
+  }
+  .Lscreenshot .scmain .scimgs #s1 .img:not(:hover) {
+    transform: translateY(0);
+    transition: all 0.5s ease-out;
+  }
+  .Lscreenshot .scmain .scimgs #s1 .img1 {
+    background-image: url(./images/screenshot-img1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .Lscreenshot .scmain .scimgs #s1 .img2 {
+    background-image: url(./images/screenshot-img2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .Lscreenshot .scmain .scimgs #s1 .img3 {
+    background-image: url(./images/screenshot-img3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .Lscreenshot .scmain .scimgs #s1 .img4 {
+    background-image: url(./images/screenshot-img4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .Lscreenshot .scmain .scimgs #s2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .Lscreenshot .scmain .scimgs #s2 .img {
+    height: 75%;
+    width: 24%;
+  }
+  .Lscreenshot .scmain .scimgs #s2 .img:hover {
+    transform: translateY(-10px);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+    transition: all 0.5s ease-out;
+  }
+  .Lscreenshot .scmain .scimgs #s2 .img:not(:hover) {
+    transform: translateY(0);
+    transition: all 0.5s ease-out;
+  }
+  .Lscreenshot .scmain .scimgs #s2 .img5 {
+    background-image: url(./images/screenshot-img5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .Lscreenshot .scmain .scimgs #s2 .img6 {
+    background-image: url(./images/screenshot-img6.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .Lscreenshot .scmain .scimgs #s2 .img7 {
+    background-image: url(./images/screenshot-img7.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .Lscreenshot .scmain .scimgs #s2 .img8 {
+    background-image: url(./images/screenshot-img8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .Lscreenshot .scmain #switch1 {
+    display: none;
+  }
+  .Lscreenshot .scmain #switch1:checked ~ .scimgs .holder {
+    transform: translateX(0);
+    transition: all 2s ease;
+  }
+  .Lscreenshot .scmain #switch2 {
+    display: none;
+  }
+  .Lscreenshot .scmain #switch2:checked + .scimgs .holder {
+    transform: translateX(-100%);
+    transition: all 2s ease;
+  }
+  .Lscreenshot .scmain .controls label {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    border: 1px solid white;
+  }
+  .Lscreenshot .scmain .controls label:checked {
+    border: 2px solid #1dc9e3;
+  }
+  .appPricing {
+    height: 110vh;
+    display: grid;
+    grid-template-rows: 2fr 8fr;
+    color: #eee;
+    background-color: #535BD4;
+  }
+  .appPricing .appText {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  .appPricing .appText h1 {
+    font-size: 3.25rem;
+    font-weight: 400;
+  }
+  .appPricing .appText hr {
+    width: 6rem;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 1rem;
+  }
+  .appPricing .priceCard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 75%;
+    margin: 0 auto;
+  }
+  .appPricing .priceCard .cardHolder {
+    position: relative;
+  }
+  .appPricing .priceCard .cardHolder .card {
+    height: 65%;
+    width: 90%;
+    margin: 3rem auto 0 auto;
+    display: grid;
+    grid-template-rows: 2fr repeat(5, 1fr) 2fr;
+  }
+  .appPricing .priceCard .cardHolder .card h2,
+  .appPricing .priceCard .cardHolder .card h3,
+  .appPricing .priceCard .cardHolder .card p {
+    margin: auto;
+  }
+  .appPricing .priceCard .cardHolder .card h2 {
+    font-size: 3.25rem;
+    color: #1dc9e3;
+  }
+  .appPricing .priceCard .cardHolder .card h3 {
+    font-size: 1.4rem;
+    color: #535BD4;
+  }
+  .appPricing .priceCard .cardHolder .card p {
+    font-size: 1.25rem;
+    color: #656565;
+  }
+  .appPricing .priceCard .cardHolder button {
+    position: absolute;
+    height: 4rem;
+    width: 12rem;
+    border-radius: 2rem;
+    background-color: #1dc9e3;
+    font-size: larger;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    color: #eee;
+    top: 67%;
+    left: 25%;
+  }
+  .appPricing .priceCard .cardHolder button:hover {
+    background-color: #eee;
+    color: #000000;
+    border: 3px solid #eee;
+    border-right: 3px solid #000000;
+    border-left: 3px solid #000000;
+    transition: all 0.5s ease-in;
+  }
+  .newsletter {
+    height: 60vh;
+    background-image: url(./images/newsletter-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .newsletter .subscribe {
+    height: 100%;
+    background-color: #1dc9e3;
+    opacity: 0.9;
+    display: grid;
+    grid-template-rows: 2.7fr 2fr;
+  }
+  .newsletter .subscribe .subscribeText {
+    color: #eee;
+    width: 50%;
+    text-align: center;
+    margin: auto auto 0 auto;
+  }
+  .newsletter .subscribe .subscribeText h2 {
+    font-size: 2rem;
+  }
+  .newsletter .subscribe .subscribeText p {
+    font-size: 1.25rem;
+  }
+  .newsletter .subscribe .mail {
+    margin: 0 auto;
+  }
+  .newsletter .subscribe .mail input {
+    height: 3rem;
+    width: 30rem;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #eee;
+    background: transparent;
+  }
+  .newsletter .subscribe .mail input::-moz-placeholder {
+    font-size: 1.25rem;
+    padding-left: 2rem;
+    color: #eee;
+    font-weight: 400;
+  }
+  .newsletter .subscribe .mail input::placeholder {
+    font-size: 1.25rem;
+    padding-left: 2rem;
+    color: #eee;
+    font-weight: 400;
+  }
+  .newsletter .subscribe .mail button {
+    height: 3.5rem;
+    width: 13.75rem;
+    border-radius: 2rem;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1dc9e3;
+    background-color: #eee;
+  }
+  .newsletter .subscribe .mail button:hover {
+    background: transparent;
+    color: #eee;
+    border: 3px solid #eee;
+    transition: all 0.5s ease-in;
+  }
+  footer {
+    height: 20vh;
+    background-color: #1c1c1c;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    color: #656565;
+  }
+  footer p {
+    font-size: 1.25rem;
+    font-weight: lighter;
+    margin: auto;
+  }
+  footer p #temp {
+    color: #535BD4;
+    cursor: pointer;
+  }
+  footer p #temp:hover {
+    color: #1dc9e3;
+    transition: all 0.5s ease;
+  }
+  footer .icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+  }
+  footer .icons .iconbg {
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  footer .icons .iconbg i {
+    color: #656565;
+    font-size: 1.1rem;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .icons .iconbg i:hover {
+    background-color: #1dc9e3;
+    transform: translateY(-10%);
+    transition: all 0.5s ease-in-out;
+    color: #eee;
+  }
+}/*# sourceMappingURL=style.css.map */
